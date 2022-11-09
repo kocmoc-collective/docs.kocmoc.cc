@@ -1,0 +1,280 @@
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Box sizing
+--------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Fonts
+--------------------------------------------- */
+
+@font-face {
+  font-family: 'Univers';
+  src: url('../fonts/univers/Univers-Next-Regular.woff2') format('woff2'), url('../fonts/univers/Univers-Next-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Univers';
+  src: url('../fonts/univers/Univers-Next-Medium.woff2') format('woff2'), url('../fonts/univers/Univers-Next-Medium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Univers';
+  src: url('../fonts/univers/Univers-Next-Bold.woff2') format('woff2'), url('../fonts/univers/Univers-Next-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Theme Variables
+--------------------------------------------- */
+
+/* Root */
+:root {
+  --font-family-base: 'Univers', sans-serif;
+
+  --font-size-sm: 0.889rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.563rem;
+  /* --font-size-xl: 2.441rem; */
+  --font-size-xl: clamp(1.424rem, calc(1.424rem + ((1vw - 0.234375rem) * 1.6492)), 2.027rem);
+
+  --font-weight-base: normal;
+  --font-weight-medium: 500;
+  --font-weight-bold: bold;
+
+  --bg-base: #000;
+  --bg-secondary: #e0e0e0;
+  --bg-dark: #141414;
+  --bg-accent: indianred;
+
+  --text-base: #000;
+  --text-light: #eeeeee;
+  --text-dark: #141414;
+  --text-accent: #00cccc;
+
+  --border-base: #141414;
+
+  --container-base: 2560px;
+  --container-sm: 540px;
+  --container-md: 720px;
+  --container-lg: 960px;
+  --container-xl: 1140px;
+  --container-xxl: 1320px;
+  --container-fluid: 100%;
+}
+
+.red {
+  --bg-accent: indianred;
+}
+
+.blue {
+  --bg-accent: cadetblue;
+}
+
+.green {
+  --bg-accent: darkseagreen;
+}
+
+/* Typography
+--------------------------------------------- */
+
+html {
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: var(--text-base);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-base);
+  font-size: var(--font-size-base);
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 1.5rem;
+}
+
+/* Elements
+--------------------------------------------- */
+body {
+  margin: 0;
+  background: blue;
+}
+
+hr {
+  background-color: var(--border-base);
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+  margin: 0 0 1.5rem 3rem;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+}
+
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  margin: 1rem 0;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+  display: inline-block;
+  color: var(--text-base);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--text-base);
+}
+
+a:hover {
+  color: var(--text-accent);
+}
+
+a:focus,
+a:hover,
+a:active {
+  outline: 0;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25rem;
+  text-decoration-color: var(--border-base);
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+
+/* Site
+--------------------------------------------- */
+
+.site {
+  max-width: var(--container-base);
+  margin: 0 auto;
+  padding: 0;
+  background-color: var(--bg-accent);
+}
+
+/* Site Header
+--------------------------------------------- */
+.site-header {
+  max-width: var(--container-fluid);
+  margin: 0 auto;
+}
+
+.main-nav {
+  padding: 1.5rem 20px;
+}
+
+.site-title {
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+}
+
+.marquee {
+  overflow: hidden;
+}
+
+.marquee__copy {
+  margin: 0;
+  padding-right: 1.5rem;
+  font-size: 8.5vw;
+  line-height: 100%;
+}
+
+/* Site Main
+--------------------------------------------- */
+
+.site-main {
+  max-width: var(--container-fluid);
+  margin: 0 auto;
+}
+
+/* Site Footer
+--------------------------------------------- */
+
+.site-footer {
+  max-width: var(--container-fluid);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.site-footer .logo {
+  display: block;
+  content: url('../svg/logo.svg');
+  width: 4.5vw;
+  height: 4.5vw;
+}
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+
+.index .entry-content {
+  max-width: var(--container-sm);
+  margin: 0 0 0 auto;
+  padding: 1.5rem 20px;
+}
