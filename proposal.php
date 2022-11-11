@@ -16,7 +16,7 @@
 
             <p>If you embrace our vision and our autonomous DIY culture, regarding a free-form music spreading, you are more than welcome to join our collective. Music is about sharing, so feel free to share your mixtapes and your inspirations and be part of the KOCMOC radio producers team.</p>
 
-            <p><a href="http://" target="_blank" rel="noopener noreferrer">Fill out this form</a>, to declare your interest.</p>
+            <p><a href="https://forms.gle/ng5s6gzqizWt2uFq7" target="_blank" rel="noopener noreferrer">Fill out this form</a>, to declare your interest.</p>
 
             <p>If you have any questions about the process, please <a href="mailto:kocmoc.collective@gmail.com">contact us</a>.</p>
 

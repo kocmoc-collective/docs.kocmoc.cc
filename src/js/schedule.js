@@ -31,7 +31,7 @@ function scheduleData(object) {
 
   // Create the app title
   const scheduleTitle = document.createElement('h2');
-  scheduleTitle.textContent = `Schedule API`;
+  scheduleTitle.textContent = `Confirmed Shows`;
 
   // Create the list that wraps the schedule items
   const scheduleList = document.createElement('ul');
