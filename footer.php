@@ -22,7 +22,7 @@
 </div>
 
 <script src="src/js/marquee.js?ver=1.0.0"></script>
-<script src="src/js/app.js?ver=1.0.1"></script>
+<script src="src/js/app.js?ver=1.0.2"></script>
 <?php if ($page == "Program Schedule") : ?>
     <script src="src/js/schedule.js?ver=1.0.1"></script>
 <?php endif ?>

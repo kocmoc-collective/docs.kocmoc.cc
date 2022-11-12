@@ -1,18 +1,22 @@
-<?php $page = "Donate"; ?>
+<?php $page = "Support"; ?>
 
 <?php include 'header.php'; ?>
 
-<main class="site-main donate">
+<main class="site-main support">
 
     <article>
 
         <header class="entry-header">
 
-            <h2>Thank you for your interest in supporting Kocmoc Collective.</h2>
+            <div class="marquee" data-speed="0.25" data-pausable="true">
+                <h1 class="entry-title">Support</h1>
+            </div>
 
         </header>
 
         <div class="entry-content">
+
+            <h2>Thank you for your interest in supporting KOCMOC.</h2>
 
             <p>Kocmoc Collective is funded by its own members and also its listeners’ – supporters’ donations. We do not accept advertising or underwriting. Kocmoc Collective uses its funding to cover servers costs, to purchase and repair equipment and to expand its music library.</p>
 
