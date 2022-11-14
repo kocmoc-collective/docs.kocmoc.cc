@@ -23,7 +23,6 @@
                 </h1>
 
                 <ul class="main-menu">
-                    <li><a href="mission-statement">Mission Statement</a></li>
                     <li><a href="application">Application</a></li>
                     <li><a href="submit">Submitting Shows</a></li>
                     <li><a href="schedule">Program Schedule</a></li>

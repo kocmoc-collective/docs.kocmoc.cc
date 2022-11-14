@@ -66,7 +66,7 @@ html {
   --text-base: #fff;
   --text-accent: #00e8a2;
 
-  --border-base: #ccc;
+  --border-base: #3d3d3d;
 
   --container-base: 2560px;
   --container-sm: 540px;
@@ -292,15 +292,16 @@ a:active {
 # Pages
 --------------------------------------------------------------*/
 
-:is(.index, .mission-statement, .submit, .application, .schedule, .support) .entry-header {
+:is(.index, .application, .submit, .schedule, .support) .entry-header {
   max-width: var(--container-fluid);
-  margin: 3rem 0;
+  margin: 1.5rem 0;
   padding: 0;
   position: sticky;
   top: 20px;
+  z-index: 1;
 }
 
-:is(.index, .mission-statement, .submit, .application, .schedule, .support) .entry-content {
+:is(.index, .application, .submit, .schedule, .support) .entry-content {
   max-width: var(--container-md);
   margin: 3rem 0 3rem auto;
   padding: 0 20px;
@@ -313,26 +314,15 @@ a:active {
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: schedule-list;
   display: flex;
   flex-direction: column-reverse;
 }
 
 #schedule > ul > li {
   position: relative;
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid;
-  padding-left: 2.5rem;
-}
-
-#schedule > ul > li::before {
-  position: absolute;
-  left: 0;
-  top: 0.075rem;
-  font-size: 0.8rem;
-  counter-increment: schedule-list;
-  content: counter(schedule-list, decimal-leading-zero) '.';
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-base);
 }
 
 #schedule > ul > li .title {

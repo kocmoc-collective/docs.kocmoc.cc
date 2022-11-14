@@ -1,15 +1,13 @@
 /*
-The fetch() API is asynchronous. We need to add the keyword async 
-before the name of the function that uses the fetch API, and add 
-the keyword await before the calls to any asynchronous functions.
-
-TODO: Make the request URL secret.
+Google Calendar API
 */
+
+// https://www.googleapis.com/calendar/v3/calendars/kocmoc.collective@gmail.com/events?key=AIzaSyDyNSG-eHUJ8YrGZRCojAq_AIdUYg4YPWE
 
 // Create the top-level function to obtain the JSON using the Fetch API
 async function schedule() {
   // Declare the requestURL variable to store the Google Calendar URL
-  const requestURL = 'https://www.googleapis.com/calendar/v3/calendars/info.kocmoc%40gmail.com/events?key=AIzaSyAIYy9wpMQzj8VAG0BC9hdV538eer5GRjo';
+  const requestURL = 'https://www.googleapis.com/calendar/v3/calendars/info.kocmoc@gmail.com/events?singleEvents=true&orderBy=startTime&maxResults=2000&key=AIzaSyAIYy9wpMQzj8VAG0BC9hdV538eer5GRjo';
   // Use the URL to initialize a new Request object
   const request = new Request(requestURL);
   // Make the network request using the fetch() function, and this returns a Response object
@@ -53,24 +51,27 @@ function scheduleData(object) {
     // Create several HTML elements
     const scheduleListItem = document.createElement('li');
     const scheduleListItemTitle = document.createElement('div');
+    const scheduleListItemStartDate = document.createElement('div');
+    // const scheduleListItemEndDate = document.createElement('div');
     const scheduleListItemDescription = document.createElement('div');
     const scheduleListItemLocation = document.createElement('div');
-    const scheduleListItemStartDate = document.createElement('div');
-    const scheduleListItemEndDate = document.createElement('div');
 
     // Set attributes
     scheduleListItemTitle.classList.add('title');
+    scheduleListItemStartDate.classList.add('start-date');
+    // scheduleListItemEndDate.classList.add('end-date');
     scheduleListItemDescription.classList.add('description');
     scheduleListItemLocation.classList.add('location');
-    scheduleListItemStartDate.classList.add('start-date');
-    scheduleListItemEndDate.classList.add('end-date');
 
     // Check if title exists and add content
     if (scheduleItem.hasOwnProperty('summary')) {
-      scheduleListItemTitle.textContent = `Title: ${scheduleItem.summary}`;
-    } else {
-      scheduleListItemTitle.textContent = `Title: No title`;
+      scheduleListItemTitle.textContent = `${scheduleItem.summary}`;
     }
+
+    // Add content to start date
+    scheduleListItemStartDate.textContent = `${new Date(scheduleItem.start.dateTime).toString()}`;
+    // Add content to end date
+    // scheduleListItemEndDate.textContent = `End date: ${scheduleItem.end.dateTime}`;
 
     // Check if description exists and add content
     if (scheduleItem.hasOwnProperty('description')) {
@@ -78,31 +79,22 @@ function scheduleData(object) {
       const descriptionString = scheduleItem.description;
       const formattedDescriptionString = descriptionString.replace(/<\/?[^>]+>/gi, '');
 
-      scheduleListItemDescription.textContent = `Description: ${formattedDescriptionString}`;
-    } else {
-      scheduleListItemDescription.textContent = `Description: no description`;
+      scheduleListItemDescription.textContent = `${formattedDescriptionString}`;
     }
 
     // Check if location exists and add content
     if (scheduleItem.hasOwnProperty('location')) {
-      scheduleListItemLocation.textContent = `Location: ${scheduleItem.location}`;
-    } else {
-      scheduleListItemLocation.textContent = `Location: no location`;
+      scheduleListItemLocation.textContent = `${scheduleItem.location}`;
     }
-
-    // Add content to start date
-    scheduleListItemStartDate.textContent = `Start date: ${scheduleItem.start.dateTime}`;
-    // Add content to end date
-    scheduleListItemEndDate.textContent = `End date: ${scheduleItem.end.dateTime}`;
 
     // Append list items into the list
     scheduleList.appendChild(scheduleListItem);
     // Append elements into each list item
     scheduleListItem.appendChild(scheduleListItemTitle);
+    scheduleListItem.appendChild(scheduleListItemStartDate);
+    // scheduleListItem.appendChild(scheduleListItemEndDate);
     scheduleListItem.appendChild(scheduleListItemDescription);
     scheduleListItem.appendChild(scheduleListItemLocation);
-    scheduleListItem.appendChild(scheduleListItemStartDate);
-    scheduleListItem.appendChild(scheduleListItemEndDate);
   }
   // }
 }
