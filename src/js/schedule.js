@@ -2,12 +2,10 @@
 Google Calendar API
 */
 
-// https://www.googleapis.com/calendar/v3/calendars/kocmoc.collective@gmail.com/events?key=AIzaSyDyNSG-eHUJ8YrGZRCojAq_AIdUYg4YPWE
-
 // Create the top-level function to obtain the JSON using the Fetch API
 async function schedule() {
   // Declare the requestURL variable to store the Google Calendar URL
-  const requestURL = 'https://www.googleapis.com/calendar/v3/calendars/info.kocmoc@gmail.com/events?singleEvents=true&orderBy=startTime&maxResults=2000&key=AIzaSyAIYy9wpMQzj8VAG0BC9hdV538eer5GRjo';
+  const requestURL = 'https://www.googleapis.com/calendar/v3/calendars/kocmoc.collective@gmail.com/events?singleEvents=true&orderBy=startTime&maxResults=2000&key=AIzaSyDyNSG-eHUJ8YrGZRCojAq_AIdUYg4YPWE';
   // Use the URL to initialize a new Request object
   const request = new Request(requestURL);
   // Make the network request using the fetch() function, and this returns a Response object
@@ -28,8 +26,8 @@ function scheduleData(object) {
   const scheduleItems = object.items;
 
   // Create the app title
-  const scheduleTitle = document.createElement('h2');
-  scheduleTitle.textContent = `Confirmed Shows`;
+  const scheduleTitle = document.createElement('div');
+  scheduleTitle.textContent = `The list represents confirmed radio shows along with additional metadata such as title, start time / time zone, description, location, etc. API supports single events - recurring events are not valid. Max entries: 2000`;
 
   // Create the list that wraps the schedule items
   const scheduleList = document.createElement('ul');

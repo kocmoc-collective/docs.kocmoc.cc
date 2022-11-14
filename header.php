@@ -8,6 +8,7 @@
     <title><?php echo $page; ?> - Kocmoc Web Docs</title>
     <link rel="stylesheet" href="src/css/normalize.css?ver=1.0.0" />
     <link rel="stylesheet" href="src/css/app.css?ver=1.0.2" />
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
 </head>
 
 <body>
@@ -26,7 +27,9 @@
                     <li><a href="application">Application</a></li>
                     <li><a href="submit">Submitting Shows</a></li>
                     <li><a href="schedule">Program Schedule</a></li>
+                    <li><a href="https://graphics.kocmoc.cc/posters">Web Graphics</a></li>
                     <li><a href="support">Support</a></li>
+                    <a href="https://kocmoc.live" target="_blank" rel="noopener noreferrer">KOCMOC.LIVE</a>
                 </ul>
 
             </nav>
